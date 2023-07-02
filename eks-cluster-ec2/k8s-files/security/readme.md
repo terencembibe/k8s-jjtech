@@ -20,16 +20,17 @@ kubectl config rename-context <old-context-name> <new-context-name> # Rename con
 
 ## Steps to implement RBAC
 - Create a new IAM Role in AWS
-- Assign eks permission or ADmin permission
-- Edit COnfigMao AUth with and add the name of the user or add group (if user is in any group)
+- Assign eks permission or Admin permission
+- Edit ConfigMap AUth and add the name of the user or add group (if user is in any group)
 
-  > kubectl edit -n kube-system configmap/aws-auth # edit your aws-auth ConfigMap to add users nad groups
+  > kubectl edit -n kube-system configmap/aws-auth # edit your aws-auth ConfigMap to add users and groups
 
-- configure a CLuster role and a cluster role binding with the required permissions in the cluster
+- configure a Cluster role and a cluster role binding with the required permissions in the cluster
 - Deploy the cluster role amnd role binding
 - deploy your k8s workloads
 
-- update profile on cli by runing o=commands:
+- update profile on cli by running the commands below:
+  - aws configure --profile <profile-name> # Provide credentials for new user created above
   - export AWS_PROFILE=<name of profile> # to set profile to a current profile
   - aws sts get-caller-identity # Run command to confirm current profile
 
@@ -39,7 +40,7 @@ kubectl config rename-context <old-context-name> <new-context-name> # Rename con
 
 
 
-## Temlate for CONFIGMAPAUTH
+## Template for CONFIGMAPAUTH
 
 # Please edit the object below. Lines beginning with a '#' will be ignored,
 # and an empty file will abort the edit. If an error occurs while saving this file will be

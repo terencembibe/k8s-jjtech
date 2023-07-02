@@ -37,6 +37,7 @@ Create a StorageClass, PersistentVolume, and PersistentVolumeClaim (as mentioned
 
 - Remember to adjust the configuration settings, such as storage capacity, access modes, and networking and filesystemID to match your specific requirements and cluster setup.
 
+>
 
 ## https://kubernetes.io/docs/concepts/storage/volumes/#local # Volume config for hostpath
 ## https://kubernetes.io/docs/concepts/storage/persistent-volumes/  # For kubernetes PErsistent volumes
